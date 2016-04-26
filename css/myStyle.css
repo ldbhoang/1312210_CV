@@ -1,0 +1,269 @@
+/*--------------------------------------------------
+LE DANG BAO HOANG - 1312210
+STYLE
+---------------------------------------------------*/
+
+/*--------------------------------------------------
+COMMON
+---------------------------------------------------*/
+.body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+/*--------------------------------------------------
+NAVBAR
+---------------------------------------------------*/
+.navbar {
+	background-color: #2c3e50;
+	text-transform: uppercase;
+	text-align: center;
+	display: inline-block;
+}
+
+.navbar ul li {
+	display: inline-block;
+	position: relative;
+	
+}
+
+.navbar ul li a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: transparent;
+	padding: 15px;
+}
+
+.navbar ul li a:hover{
+	color: #18bc9c;
+	background-color: transparent;
+}
+
+.navbar .nav ul li a:active {
+	color: black;
+}
+
+.icon-bar {
+	color: white;
+	background-color: white;
+}
+/*--------------------------------------------------
+ABOUT Me
+---------------------------------------------------*/
+.aboutMe {
+	background-color: #18bc9c;
+	padding: 5%;
+	width: 100%;
+	height: auto;
+
+}
+
+.aboutMe img {
+	border-radius: 50%;
+	border-style: solid;
+	border-color: white;
+	padding: 5%;
+}
+
+
+.aboutMe .name {
+	margin-top: 23%;
+	color: white;
+	font-weight: bold;
+	font-size: 3vw;
+	text-transform: uppercase;
+}
+
+.aboutMe p {
+	font-size: 2.5vw;
+	color: white;
+}
+
+
+/*--------------------------------------------------
+WHITE BACKGROUND
+---------------------------------------------------*/
+.whiteSection {
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.whiteSection .label {
+	
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-size: 3vw;
+	color: #2c3e50;
+}
+
+/*--------------------------------------------------
+Green BACKGROUND
+---------------------------------------------------*/
+.greenSection {
+	padding-top: 2%;
+	padding-bottom: 2%;
+	text-align: center;
+	background-color: #18bc9c;
+	
+}
+
+.greenSection .label {
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-size: 3vw;
+	color: white;
+}
+/*--------------------------------------------------
+BUTTON
+---------------------------------------------------*/
+.button {
+    background-color: #75BAF0;
+    border-radius: 20px;
+    color: #37567F;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: -5px 20px 10px -5px rgba(0,0,0,0.2), 0 16px 20px 0 rgba(0,0,0,0.19);
+	width: 100%;
+	
+	background: #75BAF0; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#9CE0FF, #5C97DF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9CE0FF, #5C97DF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9CE0FF, #5C97DF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9CE0FF, #5C97DF); /* Standard syntax */
+}
+
+/*--------------------------------------------------
+FEATURE
+---------------------------------------------------*/
+.feature {
+	display: inline-block;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.feature img {
+	float: left;
+	width: 20%;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.feature .content {
+	padding-left: 22%;
+	margin-top: -20px;
+	text-align: justify;
+}
+
+
+
+/*--------------------------------------------------
+QUOTE
+---------------------------------------------------*/
+.example-obtuse {
+  position:relative;
+  padding:15px 30px;
+  margin:0;
+  color:#000;
+  background:#F0F0F0; /* default background for browsers without gradient support */
+  /* Using longhand to avoid inconsistencies between Safari 4 and Chrome 4 */
+  -webkit-border-top-left-radius:10px 10px;
+  -webkit-border-top-right-radius:10px 10px;
+  -moz-border-radius:10px / 10px;
+  border-radius:10px / 10px;
+  font-style: italic;
+  text-align: center;
+  color: gray;
+  font-size: 15px;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-obtuse + p {margin:10px 150px 2em 0; text-align:right; font-style:italic;}
+
+/* creates the larger triangle */
+.example-obtuse:before {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  right:80px;
+  border-width:0 0 30px 50px;
+  border-style:solid;
+  border-color:transparent #F0F0F0;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+
+}
+
+/* creates the smaller triangle */
+.example-obtuse:after {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  right: 110px;
+  border-width:0 0 30px 20px;
+  border-style:solid;
+  border-color:transparent #fff;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+/* Source: http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ */
+
+/*--------------------------------------------------
+FOOTER
+---------------------------------------------------*/
+#footer_1 {
+	margin-top: 50px;
+	margin-left:-40px;
+	margin-right: -40px;
+    background: -webkit-radial-gradient(#AAAAAA, #969696, #787878); /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#AAAAAA, #969696, #787878); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#AAAAAA, #969696, #787878); /* For Fx 3.6 to 15 */
+    background: radial-gradient(#AAAAAA, #969696, #787878); /* Standard syntax (must be last) */
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#footer_1 img {
+	width: 15%;
+	height: auto;
+	padding-left: 10px;
+}
+
+#footer_2 {
+	margin-left:-40px;
+	margin-right: -40px;
+    background: -webkit-radial-gradient(#6E6E6E, #555555, #4B4B4B); /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#6E6E6E, #555555, #4B4B4B); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#6E6E6E, #555555, #4B4B4B); /* For Fx 3.6 to 15 */
+    background: radial-gradient(#6E6E6E, #555555, #4B4B4B); /* Standard syntax (must be last) */
+}
+
+#footer_2 p {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	font-weight: bold;
+}
+
+#footer_2 a {
+	color: black;
+}
+
+.footer_2_left {
+	float: left;
+}
+
+.footer_2_right {
+	float: right;
+}
+
