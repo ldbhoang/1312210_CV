@@ -1,0 +1,22 @@
+[
+	{
+		"name" : "C++",
+		"exp" : "76%"
+	},
+	{
+		"name" : "C#",
+		"exp" : "68%"
+	},
+	{
+		"name" : "HTML",
+		"exp" : "83%"
+	},
+	{
+		"name" : "CSS",
+		"exp" : "80%"
+	},
+	{
+		"name" : "Javascript",
+		"exp" : "59%"
+	} 
+]

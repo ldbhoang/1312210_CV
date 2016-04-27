@@ -1,0 +1,38 @@
+[
+	{
+		"year" :  "2013",
+		"job" : "Software Engineering",
+		"place" : "Hồ Chí Minh University of Science",
+		"data" : [
+					{"value" : "Student Id: 1312210"},		
+					{"value" : "GPA: 8.12"},
+					{"value" : "Expected Graduation Time: 10/2017"}
+				]
+	},
+	{
+		"year" :  "2010",
+		"job" : "Student",
+		"place" : "Nguyễn Du High school for the Gifted Student",
+		"data" : [
+					{"value" : "Consolation prize - Provincial Level viOlympic Contest 2013"},		
+					{"value" : "Consolation prize - Provincial Level viOlympic Contest 2012"}
+				]
+	},
+	{
+		"year" :  "2006",
+		"job" : "Student",
+		"place" : "Nguyễn Du Secondary school",
+		"data" : [
+					{"value" : "Consolation prize - Provincial Level Mathematic Contest 2009"}
+				]
+	},
+	{
+		"year" :  "2001",
+		"job" : "Student",
+		"place" : "Quang Trung primary school",
+		"data" : [
+					{"value" : "Second prize -  Provincial Level Contest 2005"},		
+					{"value" : "Fist prize - Provincial Level Painting Contest 2005"}
+				]
+	}
+]

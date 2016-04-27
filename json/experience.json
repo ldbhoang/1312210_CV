@@ -1,0 +1,23 @@
+[
+	{
+		"year" :  "2015",
+		"job" : "Supporter - Front-end website developer",
+		"place" : "X Digital",
+		"tasks" : 	[
+						{"value" : "Test, fix bugs before release our websites."},		
+						{"value" : "Update content."},
+						{"value" : "Support customers."},
+						{"value" : "Maintain Websites."}
+					]
+	},
+	{
+		"year" :  "2012",
+		"job" : "Writer",
+		"place" : "Cafe F1 Technology Magazine",
+		"tasks" : 	[
+						{"value" : "Update posts."},		
+						{"value" : "Translate, write posts about mobile, tablet, laptop."},
+						{"value" : "Check posts."}
+					]
+	}
+]
