@@ -35,3 +35,13 @@ myApp.controller("getEducation", ['$scope', '$http', function($scope, $http){
 		$scope.result = data;
 	});
 }]);
+
+myApp.controller("navController", function ($scope, $location) {
+    $scope.isCollapsed = true;
+	
+    $scope.$on('$routeChangeSuccess', function () {
+        $scope.isCollapsed = true;
+		alert("huhuuhu");
+    });
+});
+ 
