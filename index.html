@@ -7,8 +7,8 @@
     <title>1312210 - CV</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/myStyle.css" rel="stylesheet">
-	<script src="javascript/angular.min.js"></script>
-	<script src="javascript/myScript.js"></script>
+	<script src="javascript/angular.min.js" type="text/javascript"></script>
+	<script src="javascript/myScript.js" type="text/javascript"></script>
   </head>
   <body ng-app="myCV">
 	<nav class="navbar navbar-fixed-top container-fluid">
@@ -41,26 +41,21 @@
 						<span class="glyphicon glyphicon-flag"></span> Việt Nam <br/>
 						<span class="glyphicon glyphicon-briefcase"></span> Software Engineering <br/>
 						<span class="glyphicon glyphicon-phone"></span> 0982679186 <br/>
-						<span class="glyphicon glyphicon-envelope"></span> ldbhoang@gmail.com <br/>						
+						<span class="glyphicon glyphicon-envelope"></span> ldbhoang@gmail.com <br/>				
 					</p>
 				</div>
 			</div>
 		</div>
 		
-		<div class="whiteSection container-fluid" id="summary">
+		<div class="whiteSection container-fluid" id="summary" ng-controller="getAboutMe">
 			<p class="label">
 			<span class="glyphicon glyphicon-star"></span>
 			summary
 			<span class="glyphicon glyphicon-star"></span></p>
-			<p>
-				I am Lê Đăng Bảo Hoàng, studying Software Engineering at Hồ Chí Minh University of Science. Expected graduation time: 10/2017.
-				<br/>
-				At the moment, I'm supporter and front-end website developer at X Digital, my main tasks are test, fix bugs and support customers.
-				<br/>
-				My quote: No pain no gain.
-				<br/>
-				Specialties: Working under high pressure, Communication.
+			<p ng-repeat="item in result">
+				{{item.value}}
 			</p>
+			
 		</div>
 		
 		<div class="greenSection container-fluid" id="experience">

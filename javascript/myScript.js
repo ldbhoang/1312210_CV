@@ -1,5 +1,11 @@
-var myApp = angular.module('myCV', ['ui.bootstrap']);
+var myApp = angular.module("myCV", []);
 
-myApp.controller(function NavBarCtrl($scope) {
-    $scope.isCollapsed = true;
+myApp.controller("header", function($scope) {
+    $scope.title= "Bé tập tính";
 });
+
+myApp.controller("getAboutMe", ['$scope', '$http', function($scope, $http){
+	$http.get('json/aboutMe.json').success(function(data) {
+		$scope.result = data;
+	});
+}]);
