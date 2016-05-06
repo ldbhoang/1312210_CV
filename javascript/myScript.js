@@ -1,4 +1,4 @@
-var myApp = angular.module("myCV", []);
+var myApp = angular.module("myCV", ['ui.bootstrap']);
 
 myApp.controller("getAboutMe", ['$scope', '$http', function($scope, $http){
 	$http.get('json/aboutMe.json').success(function(data) {
@@ -43,5 +43,13 @@ myApp.controller("navController", function ($scope, $location) {
         $scope.isCollapsed = true;
 		alert("huhuuhu");
     });
+});
+
+myApp.controller('CollapseCtrl', function ($scope) {
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+		$scope.IsVisible = $scope.IsVisible ? false : true;
+	}
 });
  
