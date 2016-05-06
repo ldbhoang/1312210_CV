@@ -46,10 +46,19 @@ myApp.controller("navController", function ($scope, $location) {
 });
 
 myApp.controller('CollapseCtrl', function ($scope) {
+	$scope.title = "Edit";
     $scope.IsVisible = false;
     $scope.ShowHide = function () {
-        //If DIV is visible it will be hidden and vice versa.
 		$scope.IsVisible = $scope.IsVisible ? false : true;
+		if($scope.IsVisible == true)
+		{
+			$scope.title = "Save";
+		}
+		else
+		{
+			$scope.title = "Edit";
+		}
+		
 	}
 });
  

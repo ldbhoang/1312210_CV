@@ -28,16 +28,19 @@
 					<img class="img-responsive" src="{{result.Image}}">
 				</div>
 				<div class="col-xs-6" style="vertical-align: middle;" >
-					<p class="name">{{result.Name}}</p>
+					<p class="name">
+						{{result.Name}}
+						<span ng-show = "IsVisible"><br/> <input ng-model="result.Name"/> </span> <br/>
+					</p>
 					<p>
-						<span class="glyphicon glyphicon-flag"></span> {{result.Country}} <span ng-show = "IsVisible"><input ng-model="result.Country"/></span> <br/>
-						<span class="glyphicon glyphicon-briefcase"></span> {{result.Major}} <span ng-show = "IsVisible"><input ng-model="result.Major"/></span> <br/>
-						<span class="glyphicon glyphicon-phone"></span> {{result.Mobile}} <br/> <span ng-show = "IsVisible"><input ng-model="result.Mobile"/></span>
-						<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{result.Email}}"> {{result.Email}} </a>	 <span ng-show = "IsVisible"><input ng-model="result.Email"/></span>						
+						<span class="glyphicon glyphicon-flag"></span> {{result.Country}}<span ng-show = "IsVisible"><br/> <input ng-model="result.Country"/> </span> <br/>
+						<span class="glyphicon glyphicon-briefcase"></span> {{result.Major}}<span ng-show = "IsVisible"> <br/> <input ng-model="result.Major"/></span> <br/>
+						<span class="glyphicon glyphicon-phone"></span> {{result.Mobile}}<span ng-show = "IsVisible"> <br/> <input ng-model="result.Mobile"/></span> <br/>
+						<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{result.Email}}"> {{result.Email}} </a>	<span ng-show = "IsVisible"> <br/> <input ng-model="result.Email"/></span>						
 					</p>
 				</div>
 			</div>
-		<input type="button" value="Show Hide DIV" ng-click="ShowHide()" />
+		<input type="button" value="{{title}}" ng-click="ShowHide()" />
 		</div>
 		
 		</div>

@@ -129,6 +129,7 @@ WHITE BACKGROUND
 	text-align: middle;
 }
 
+
 /*--------------------------------------------------
 Green BACKGROUND
 ---------------------------------------------------*/
@@ -158,6 +159,26 @@ Green BACKGROUND
 .greenSection span {
 	font-size: 2vw;
 	text-align: middle;
+}
+
+.aboutMe input {
+	background-color: white;
+	border-color: transparent;
+	color:  #18bc9c;
+}
+
+.aboutMe input[type="button"]{
+	background-color: white;
+	border-color: transparent;
+	font-size: 1.5vw;
+	float: right;
+	border-radius: 25%;
+}
+
+.aboutMe textarea {
+	background-color: white;
+	border-color: transparent;
+	color:  #18bc9c;
 }
 /*--------------------------------------------------
 Experience & EDUCATION
