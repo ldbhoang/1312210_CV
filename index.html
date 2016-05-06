@@ -11,7 +11,7 @@
 	<script src="javascript/myScript.js" type="text/javascript"></script>
 	<script src="javascript/ui-bootstrap-1.3.2.min.js" type="text/javascript"></script>
   </head>
-  <body ng-app="myCV" ng-controller="CollapseCtrl">
+  <body ng-app="myCV">
 	<nav class="navbar navbar-fixed-top container-fluid">
 		<ul class="nav">
 				<li><a href="#summary">Summary</a></li>
@@ -23,113 +23,158 @@
 	</nav>
 	<div class="body">		
 		<div class="aboutMe container-fluid" ng-controller="getAboutMe">
-			<div class="row">
-				<div class="col-xs-6">
-					<img class="img-responsive" src="{{result.Image}}">
+			<div  ng-controller="CollapseCtrl">
+				<div class="row">
+					<div class="col-xs-6">
+						<img class="img-responsive" src="{{result.Image}}">
+						<span ng-show = "IsVisible"><br/>Url: <input ng-model="result.Image"/> </span>
+					</div>
+					<div class="col-xs-6" style="vertical-align: middle;" >
+						<p class="name">
+							{{result.Name}}
+							<span ng-show = "IsVisible"><br/> <input ng-model="result.Name"/> </span> <br/>
+						</p>
+						<p>
+							<span class="glyphicon glyphicon-flag"></span> {{result.Country}}<span ng-show = "IsVisible"><br/> <input ng-model="result.Country"/> </span> <br/>
+							<span class="glyphicon glyphicon-briefcase"></span> {{result.Major}}<span ng-show = "IsVisible"> <br/> <input ng-model="result.Major"/></span> <br/>
+							<span class="glyphicon glyphicon-phone"></span> {{result.Mobile}}<span ng-show = "IsVisible"> <br/> <input ng-model="result.Mobile"/></span> <br/>
+							<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{result.Email}}"> {{result.Email}} </a>	<span ng-show = "IsVisible"> <br/> <input ng-model="result.Email"/></span>						
+						</p>
+					</div>
 				</div>
-				<div class="col-xs-6" style="vertical-align: middle;" >
-					<p class="name">
-						{{result.Name}}
-						<span ng-show = "IsVisible"><br/> <input ng-model="result.Name"/> </span> <br/>
-					</p>
-					<p>
-						<span class="glyphicon glyphicon-flag"></span> {{result.Country}}<span ng-show = "IsVisible"><br/> <input ng-model="result.Country"/> </span> <br/>
-						<span class="glyphicon glyphicon-briefcase"></span> {{result.Major}}<span ng-show = "IsVisible"> <br/> <input ng-model="result.Major"/></span> <br/>
-						<span class="glyphicon glyphicon-phone"></span> {{result.Mobile}}<span ng-show = "IsVisible"> <br/> <input ng-model="result.Mobile"/></span> <br/>
-						<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{result.Email}}"> {{result.Email}} </a>	<span ng-show = "IsVisible"> <br/> <input ng-model="result.Email"/></span>						
-					</p>
-				</div>
+				<input type="button" value="{{title}}" ng-click="ShowHide()" />
 			</div>
-		<input type="button" value="{{title}}" ng-click="ShowHide()" />
 		</div>
 		
-		</div>
 		<div class="whiteSection container-fluid" id="summary" ng-controller="getSummary">
-			<p class="label">
-			<span class="glyphicon glyphicon-star"></span>
-			summary
-			<span class="glyphicon glyphicon-star"></span></p>
-			<p>
-			<span ng-repeat="item in result">
-				{{item.value}}   
-				 <br/> <br/>
-			</span>
-			</p>			
+			<div ng-controller="CollapseCtrl">
+				<p class="label">
+				<span class="glyphicon glyphicon-star"></span>
+				summary
+				<span class="glyphicon glyphicon-star"></span></p>
+				<p>
+				<span ng-repeat="item in result">
+					{{item.value}}
+					<span ng-show = "IsVisible"><br/> <textarea ng-model="item.value"></textarea> </span>
+					 <br/> <br/>
+				</span>
+				</p>
+				<input type="button" value="{{title}}" ng-click="ShowHide()" />
+			</div>			
 		</div>
+		
 		<div class="greenSection container-fluid" id="experience" ng-controller="getExperience">
 			<p class="label">
 			<span class="glyphicon glyphicon-star"></span>
 			Experience
 			<span class="glyphicon glyphicon-star"></span></p>
-			<div class="timeline">
+			<div class="timeline" ng-controller="CollapseCtrl">
 				<div class="row" ng-repeat="item in result">
-					<div class="year">{{item.year}}</div>
+					<div class="year">
+						{{item.year}}
+						<span ng-show = "IsVisible"><br/> <input ng-model="item.year"/> </span>
+					</div>
 					<span class="glyphicon glyphicon-flag icon"></span>
 					<div class="event">
-						<p class="job">{{item.job}}</p>
-						Working at {{item.place}} <br/>
+						<p class="job">
+							{{item.job}}
+							<span ng-show = "IsVisible"><br/> <input ng-model="item.job"/> </span>
+						</p>
+						Working at {{item.place}}
+						<span ng-show = "IsVisible"><br/> <input ng-model="item.place"/> </span>
+						<br/>
 						<strong>My main tasks are:</strong>
 						<ul ng-repeat="subitem in item.tasks">
-							<li>{{subitem.value}}</li>
+							<li>{{subitem.value}}
+							<span ng-show = "IsVisible"><br/> <input ng-model="subitem.value"/> </span>
+							</li>
 						</ul>
 					</div>
 				</div>
+				<input type="button" value="{{title}}" ng-click="ShowHide()" />
 			</div>
+			
 		</div>
 		
 		<div class="whiteSection container-fluid" id="project" ng-controller="getProject">
 			<p class="label">
-			<span class="glyphicon glyphicon-star"></span>
-			Project
-			<span class="glyphicon glyphicon-star"></span></p>
-			<div class="projects" >
+				<span class="glyphicon glyphicon-star"></span>
+				Project
+				<span class="glyphicon glyphicon-star"></span>
+			</p>
+			<div class="projects" ng-controller="CollapseCtrl">
 				<div ng-repeat="item in result | filter:query as filtered">
 					<div class="col-md-4">
 						<img src="{{item.url}}">
-						<div class="name">{{item.name}}</div>
+						<span ng-show = "IsVisible"><br/>Url:<input ng-model="item.url"/> </span>
+						<div class="name">
+							{{item.name}}
+							<span ng-show = "IsVisible"><br/> <input ng-model="item.name"/> </span>
+						</div>
 						<br ng-if="$index === 2"/>
 					</div>
 				</div>
-				<div>
-				</div>
+				<input type="button" value="{{title}}" ng-click="ShowHide()" />
 			</div>
 		</div>
 		
 		<div class="greenSection container-fluid" id="skills" ng-controller="getSkill">
 			<p class="label">
-			<span class="glyphicon glyphicon-star"></span>
-			Skill
-			<span class="glyphicon glyphicon-star"></span></p>
-			<div class="skill">
-				<div class="row" ng-repeat="item in result">
-					<div class="progressLabel col-sm-2">{{item.name}}</div>
-					<div class="col-sm-10">
-						<div class="progress">
-							<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{item.exp}}">
-							</div>
+				<span class="glyphicon glyphicon-star"></span>
+				Skill
+				<span class="glyphicon glyphicon-star"></span>
+			</p>
+			<div ng-controller="CollapseCtrl">
+				<div class="skill">
+					<div class="row" ng-repeat="item in result">
+						<div class="progressLabel col-sm-2">
+							{{item.name}}
+							<span ng-show = "IsVisible"><br/>Name: <input ng-model="item.name"/> Exp: <input ng-model="item.exp"/></span>
+						</div>
+						<div class="col-sm-10">
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{item.exp}}">
+								</div>							
+							</div>							
 						</div>
 					</div>
 				</div>
+				<input type="button" value="{{title}}" ng-click="ShowHide()" />
 			</div>
 		</div>
 		
 		<div class="whiteSection container-fluid" id="education" ng-controller="getEducation">
 			<p class="label">
-			<span class="glyphicon glyphicon-star"></span>
-			Education
-			<span class="glyphicon glyphicon-star"></span></p>
-			<div class="timeline">
-				<div class="row" ng-repeat="item in result">
-					<div class="year">{{item.year}}</div>
-					<span class="glyphicon glyphicon-flag icon"></span>
-					<div class="event">
-						<p class="job">{{item.job}}</p>
-						Study at: {{item.place}} <br/>
-						<ul ng-repeat="subitem in item.data">
-							<li>{{subitem.value}}</li>
-						</ul>
+				<span class="glyphicon glyphicon-star"></span>
+				Education
+				<span class="glyphicon glyphicon-star"></span>
+			</p>
+			<div ng-controller="CollapseCtrl">
+				<div class="timeline">
+					<div class="row" ng-repeat="item in result">
+						<div class="year">
+							{{item.year}}
+							<span ng-show = "IsVisible"><br/> <input ng-model="item.year"/> </span>
+						</div>
+						<span class="glyphicon glyphicon-flag icon"></span>
+						<div class="event">
+							<p class="job">
+								{{item.job}}
+								<span ng-show = "IsVisible"><br/> <input ng-model="item.job"/> </span>
+							</p>
+							Study at: {{item.place}}
+							<span ng-show = "IsVisible"><br/> <input ng-model="item.place"/> </span>
+							<br/>
+							<ul ng-repeat="subitem in item.data">
+								<li>
+									{{subitem.value}}
+									<span ng-show = "IsVisible"><br/> <input ng-model="subitem.value"/> </span>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
+				<input type="button" value="{{title}}" ng-click="ShowHide()" />
 			</div>
 		</div>
 	</div>
